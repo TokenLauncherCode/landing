@@ -12,8 +12,11 @@ import {
   Center,
   LinkBox,
   LinkOverlay,
+  IconButton,
+  Image,
+  Link
 } from '@chakra-ui/react';
-import { CheckIcon } from '@chakra-ui/icons';
+import { CheckIcon, EmailIcon, ExternalLinkIcon } from '@chakra-ui/icons';
 import Head from 'next/head';
 
 // Replace test data with your own
@@ -50,6 +53,8 @@ const features = [
 },
 ]
 
+const positionProps = {position: 'absolute', bottom: '2%', left:'2%'}
+
 export default function Home() {
   return (
     <>
@@ -64,9 +69,17 @@ export default function Home() {
       <Stack spacing={4} as={Container} maxW={'3xl'} textAlign={'center'}>
         <Heading fontSize={'3xl'}>Token Launcher</Heading>
         <Text color={'gray.500'} fontSize={'xl'}>
-          Deploy Ethereum & EVM tokens without coding experience in 60 seconds.
+          Deploy Ethereum & EVM tokens in 60 seconds.
         </Text>
       </Stack>
+
+      <Center mt='10'>
+        <LinkBox w={'fit-content'} >
+        <LinkOverlay isExternal href='https://app.tokenlauncher.com'>
+          <Button colorScheme={'green'} fontSize='2xl' fontWeight={'bold'} p='3' size='lg'>Launch App</Button>
+        </LinkOverlay>
+        </LinkBox>
+        </Center>
 
       <Container maxW={'6xl'} mt={10}>
         <SimpleGrid columns={{ base: 2, md: 2, lg: 3 }} spacing={10}>
@@ -83,14 +96,14 @@ export default function Home() {
           ))}
         </SimpleGrid>
       </Container>
-      <Center mt='10'>
-        <LinkBox w={'fit-content'} >
-        <LinkOverlay isExternal href='https://app.tokenlauncher.com'>
-          <Button colorScheme={'green'} fontSize='2xl' fontWeight={'bold'} p='3' size='lg'>Launch App</Button>
-        </LinkOverlay>
-        </LinkBox>
+      <Center mt='10' alignItems={'flex-start'}>
+        <VStack>
+      <Link isExternal href={'https://github.com/TokenLauncherCode'} textColor='blue.400'>GitHub</Link>
+      <Link isExternal href={'mailto:support@tokenlauncher.com'} textColor='blue.400'>support@tokenlauncher.com</Link>
+      </VStack>
       </Center>
     </Box>
+
     </>
   )
 }
