@@ -12,11 +12,9 @@ import {
   Center,
   LinkBox,
   LinkOverlay,
-  IconButton,
-  Image,
   Link
 } from '@chakra-ui/react';
-import { CheckIcon, EmailIcon, ExternalLinkIcon } from '@chakra-ui/icons';
+import { CheckIcon } from '@chakra-ui/icons';
 import Head from 'next/head';
 
 // Replace test data with your own
@@ -59,7 +57,7 @@ export default function Home() {
   return (
     <>
           <Head>
-        <title>About token Launcher</title>
+        <title>Token Launcher</title>
         <meta name="description" content="Create erc20 tokens that are traded uniswap, farming programs with any APR, and airdrop on any evm chain. Free testnet launches" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="google-site-verification" content="mn1wCy3-7CBieV3wdh4msPmcH2I6W6F3TeSGVRj8x40" />
