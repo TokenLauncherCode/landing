@@ -149,8 +149,11 @@ interface MobileProps extends FlexProps {
 const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
   return (
     <Flex
-      ml={{ base: 0, md: 60 }}
-      px={{ base: 4, md: 24 }}
+      position={'absolute'}
+      left={'2%'}
+      top={'2%'}
+      // ml={{ base: 0, md: 60 }}
+      // px={{ base: 4, md: 24 }}
       height="20"
       alignItems="center"
       justifyContent="flex-start"

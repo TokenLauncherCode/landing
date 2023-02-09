@@ -2,7 +2,6 @@ import { Box, Button, Center, FormControl, Input, Stack, Tooltip, VStack, HStack
 import { Text } from '@chakra-ui/react'
 import { useState } from 'react'   
 import { supportedChains } from '@/supportedChains'
-import NextLink from 'next/link'
 
 export type Erc20LaunchDetails = {
   contractType: string

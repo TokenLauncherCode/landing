@@ -20,10 +20,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Box p={4} textColor='gray.400' position={'absolute'} top='0%'>
+      <Box p={4} textColor='gray.400'>
         <Center>
-            <LaunchInput />
-
+          <LaunchInput />
         </Center>
       </Box>
     </>
