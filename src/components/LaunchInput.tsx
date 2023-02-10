@@ -62,14 +62,15 @@ function LaunchInput(params: any) {
     else selectNetworkChoices.push(`${supportedChains[i].name}`)
   }
 
-  const appUrlWithParms = `https://app.tokenlauncher.com?name=${name}`
+  // todo figure out the best way to pass launch params when we redirect
+  // maybe a hex encoded string?
+  const appUrlWithParms = `https://app.tokenlauncher.com`
 
-  console.log('appUrlWithParms', appUrlWithParms)
   return (
     <>
       <Stack borderColor={"gray.700"}>
       <Center>
-        <Text pt='2' pb='2' fontWeight='bold' fontSize={'2xl'}>Token Launcher</Text>
+        <Text pt='0' pb='2' fontWeight='bold' fontSize={'2xl'}>Token Launcher</Text>
       </Center>
 
         <HStack>
@@ -160,8 +161,9 @@ function LaunchInput(params: any) {
         </Button>
         </a>
         <Text pb='20px'>OR</Text>
+        <Text fontWeight={'bold'}>Existing Token Holders</Text>
         <HStack>
-          <Button>Create Airdrop</Button>
+          <Button>Airdrop</Button>
           <Button>List on Uniswap</Button>
           <Button>Setup Farming</Button>
         </HStack>

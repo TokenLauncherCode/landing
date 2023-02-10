@@ -87,13 +87,13 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
       {...rest}>
       <NextLink href={`/`} passHref>
         <Flex p='3' h="20" alignItems="center" justifyContent="space-between">
-          <IoRocketOutline size='xl' />
+          <IoRocketOutline size='100%'/>
           <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
         </Flex>
       </NextLink>
 
       {LinkItems.map((link) => (
-        <NavItem onClose={onClose} page={link.page} key={link.name} icon={link.icon}>
+        <NavItem isExternal={link.isExternal} onClose={onClose} page={link.page} key={link.name} icon={link.icon}>
           {link.name}
         </NavItem>
       ))}
@@ -109,8 +109,9 @@ interface NavItemProps extends FlexProps {
   onClose: any
 }
 const NavItem = ({ onClose, page, icon, children, isExternal, ...rest }: NavItemProps) => {
+  if(!isExternal)
   return (
-    <Link as={NextLink} onClick={onClose} isExternal href={`${page}`} style={{ textDecoration: 'none' }} _focus={{ boxShadow: 'none' }}>
+    <NextLink href={`${page}`} passHref>
       <Flex
         align="center"
         p="4"
@@ -134,8 +135,34 @@ const NavItem = ({ onClose, page, icon, children, isExternal, ...rest }: NavItem
           />
         )}
         {children}
-      </Flex>
-    </Link>)
+      </Flex></NextLink>
+  )
+  return (<Link isExternal href={`${page}`}>
+  <Flex
+    align="center"
+    p="4"
+    mx="4"
+    borderRadius="lg"
+    role="group"
+    cursor="pointer"
+    _hover={{
+      bg: 'cyan.400',
+      color: 'white',
+    }}
+    {...rest}>
+    {icon && (
+      <Icon
+        mr="4"
+        fontSize="16"
+        _groupHover={{
+          color: 'white',
+        }}
+        as={icon}
+      />
+    )}
+    {children}
+  </Flex></Link>
+)
 };
 
 interface MobileProps extends FlexProps {
@@ -148,8 +175,6 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
       position={'absolute'}
       left={'2%'}
       top={'2%'}
-      // ml={{ base: 0, md: 60 }}
-      // px={{ base: 4, md: 24 }}
       height="20"
       alignItems="center"
       justifyContent="flex-start"
