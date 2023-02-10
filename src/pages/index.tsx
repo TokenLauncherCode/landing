@@ -18,9 +18,9 @@ export default function Home() {
       </Head>
 
       <Box textColor='gray.400'>
-        <Center>
+        <Box w='fit-content'>
           <LaunchInput />
-        </Center>
+          </Box>
       </Box>
     </>
   )
