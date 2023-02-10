@@ -24,24 +24,27 @@ export default function Home(props: any) {
         <meta name="google-site-verification" content="mn1wCy3-7CBieV3wdh4msPmcH2I6W6F3TeSGVRj8x40" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Box textColor='gray.400' w='80%'>
-        <SimpleGrid columns={{ base: 1, md: 1, lg: 2 }}>
+      <Box>
+      <Box>
+      <SimpleGrid columns={{ base: 1, md: 1, lg: 2 }} >
 
-        <VStack w='100%'>
-          <Box w='fit-content' alignSelf={'center'}>
-            <LaunchInput />
+          <VStack pt='1.5em'>
+            <Box w='fit-content'>
+              <LaunchInput />
+            </Box>
+          </VStack>          
+            <VStack pt='1.5em'>
+            <Box w='fit-content'>
+              <LatestLaunches data={props?.newData ?? []} />
+            </Box>
+            </VStack>
+          </SimpleGrid> 
           </Box>
-        </VStack>          
-          <VStack w='100%'>
-          <Box w='fit-content' alignSelf={'center'}>
-            <LatestLaunches data={props?.newData ?? []} />
-          </Box>
-          </VStack>
-        </SimpleGrid>
-        <Divider p='5'/>
+        <Box w='fit-content'>
+        <Divider p='1.5em' />
         <About />
-
-      </Box>
+        </Box>
+        </Box>
     </>
   )
 }

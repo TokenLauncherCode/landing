@@ -163,9 +163,9 @@ function LaunchInput(params: any) {
         <Divider></Divider>
         <Text pt='5' fontWeight={'bold'}>Existing Token Holders</Text>
         <HStack>
-          <Button>Airdrop</Button>
-          <Button>List on Uniswap</Button>
-          <Button>Setup Farming</Button>
+          <Button size='sm'>Airdrop</Button>
+          <Button size='sm'>Add to Uniswap</Button>
+          <Button size='sm'>Setup Farming</Button>
         </HStack>
         </VStack>
       </Center>
