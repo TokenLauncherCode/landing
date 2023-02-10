@@ -26,7 +26,7 @@ export default function Home(props: any) {
       </Head>
       <Box>
       <Box>
-      <SimpleGrid columns={{ base: 1, md: 1, lg: 2 }} >
+      <SimpleGrid columns={{ base: 1, md: 1, lg: 2 }} mr={{ base: '0em', md: '10em', lg: '20em' }} >
 
           <VStack pt='1.5em'>
             <Box w='fit-content'>
