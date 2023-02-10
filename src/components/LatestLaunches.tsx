@@ -7,20 +7,22 @@ import { FixedSizeList } from 'react-window';
 import { RecentlyLaunchedRow } from './RecentlyLaunchedRow';
 
 export function LatestLaunches(params: any) {
+
+  const list = params?.data.slice(0, 5)
+
   return (
     <Stack borderColor={"gray.700"}>
       <Center>
-        <Text fontWeight='bold' fontSize={'2xl'}>Latest Tokens</Text>
+        <Text fontWeight='bold' fontSize={'2xl'}>Latest Token Launches</Text>
       </Center>
 
       <FixedSizeList
         itemSize={80}
         height={400}
-        width='100%'
         itemData={{
-          items: params?.data,
+          items: list,
         }}
-        itemCount={params?.data.length >= 10 ? 10 : 0}
+        itemCount={list.length}
       >
         {RecentlyLaunchedRow}
       </FixedSizeList>

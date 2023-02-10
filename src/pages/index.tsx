@@ -1,14 +1,18 @@
 import {
   Box,
   Center,
+  Divider,
   SimpleGrid,
+  Text,
+  VStack
 } from '@chakra-ui/react';
 
 import Head from 'next/head';
 import LaunchInput from '@/components/LaunchInput';
 import { LatestLaunches } from '@/components/LatestLaunches';
 import axios from 'axios';
-import { API_BASE_URL } from '@/supportedChains';
+import { API_BASE_URL, supportedChains } from '@/supportedChains';
+import About from '@/components/About';
 
 export default function Home(props: any) {
   return (
@@ -20,39 +24,61 @@ export default function Home(props: any) {
         <meta name="google-site-verification" content="mn1wCy3-7CBieV3wdh4msPmcH2I6W6F3TeSGVRj8x40" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Box textColor='gray.400' w='80%'>
+        <SimpleGrid columns={{ base: 1, md: 1, lg: 2 }}>
 
-      <Center mt='2'>
-      <Box textColor='gray.400' w='fit-content'>
-          <SimpleGrid columns={{ base: 1, md: 1, lg: 2 }} spacingX='40' spacingY='10'>
+        <VStack w='100%'>
+          <Box w='fit-content' alignSelf={'center'}>
             <LaunchInput />
-            <LatestLaunches data={props?.newData ?? []}/>
-          </SimpleGrid>
+          </Box>
+        </VStack>          
+          <VStack w='100%'>
+          <Box w='fit-content' alignSelf={'center'}>
+            <LatestLaunches data={props?.newData ?? []} />
+          </Box>
+          </VStack>
+        </SimpleGrid>
+        <Divider p='5'/>
+        <About />
+
       </Box>
-      </Center>
     </>
   )
 }
 
 export async function getStaticProps() {
   try {
-    const { data } = await axios.get(`${API_BASE_URL}/token_info_internal`, {
-      params: {
-        chainId: 5,
-      }
-    })
 
-    const newData = Object.values(data?.info ?? {}).map((item: any) => {
+    const datas = []
 
-      return {
-        name: item.name,
-        symbol: item.symbol,
-        address: item.address,
-        chainId: item.chainId
-      }
-    })
+    for(let i=0;i<supportedChains.length;i++) {
+      const { data: d } = await axios.get(`${API_BASE_URL}/token_info_internal`, {
+        params: {
+          chainId: supportedChains[i].id,
+        }
+      })
+      datas.push(d)
+  
+    }
+
+    let allNewData = [] as any
+
+    for(let i=0;i<datas.length;i++){
+      const newData = Object.values(datas[i]?.info ?? {}).map((item: any) => {
+
+        return {
+          name: item.name,
+          symbol: item.symbol,
+          address: item.address,
+          chainId: item.chainId
+        }
+      }).filter( (item) => item.chainId !== 5)
+      
+      allNewData = allNewData.concat(newData)
+    }
 
     return {
-      props: { newData },
+      props: { newData: allNewData },
     };
   } catch (error) {
     console.error(error);

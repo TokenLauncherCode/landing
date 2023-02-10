@@ -59,7 +59,7 @@ import {
     },
   ]
   
-  export default function Home() {
+  export default function About() {
     return (
       <>
           <Container maxW={'6xl'} mt={10}>

@@ -1,4 +1,4 @@
-import { Box, Button, Center, FormControl, Input, Stack, Tooltip, VStack, HStack, Select, Checkbox, NumberInputField, NumberInput } from '@chakra-ui/react'
+import { Box, Button, Center, FormControl, Input, Stack, Tooltip, VStack, HStack, Select, Checkbox, NumberInputField, NumberInput, Divider } from '@chakra-ui/react'
 import { Text } from '@chakra-ui/react'
 import { useState } from 'react'   
 import { supportedChains } from '@/supportedChains'
@@ -137,18 +137,18 @@ function LaunchInput(params: any) {
         </Box>
         <HStack pl='10px'>
             <HStack>
-              <Checkbox isChecked={pausable} borderColor='gray.500' size='md' colorScheme='green' onChange={(event) => setPausable(event.target.checked)}>
+              <Checkbox isChecked={pausable} borderColor='gray.500' size='md' colorScheme='blue' onChange={(event) => setPausable(event.target.checked)}>
                 Pausable
               </Checkbox>
             </HStack>
             <HStack>
-              <Checkbox isChecked={mintable} borderColor='gray.500' size='md' colorScheme='green' onChange={(event) => setMintable(event.target.checked)}>
+              <Checkbox isChecked={mintable} borderColor='gray.500' size='md' colorScheme='blue' onChange={(event) => setMintable(event.target.checked)}>
                 Mintable
               </Checkbox>
             </HStack>
 
           <HStack alignSelf={'flex-start'}>
-            <Checkbox isChecked={uniswap} borderColor='gray.500' size='md' colorScheme='green' onChange={(event) => setUniswap(event.target.checked)}>
+            <Checkbox isChecked={uniswap} borderColor='gray.500' size='md' colorScheme='blue' onChange={(event) => setUniswap(event.target.checked)}>
               Add to Uniswap
             </Checkbox>
           </HStack>
@@ -156,12 +156,12 @@ function LaunchInput(params: any) {
         <Center >
           <VStack>
         <a target="_blank" rel="noopener noreferrer" href={appUrlWithParms}>
-        <Button m='20px' colorScheme={'blue'}>
+        <Button m='20px' colorScheme={'green'}>
           <Text >Launch New Token</Text>
         </Button>
         </a>
-        <Text pb='20px'>OR</Text>
-        <Text fontWeight={'bold'}>Existing Token Holders</Text>
+        <Divider></Divider>
+        <Text pt='5' fontWeight={'bold'}>Existing Token Holders</Text>
         <HStack>
           <Button>Airdrop</Button>
           <Button>List on Uniswap</Button>

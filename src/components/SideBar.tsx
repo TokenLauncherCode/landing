@@ -19,6 +19,7 @@ import {
 } from 'react-icons/fi';
 
 import {
+  GoDeviceMobile,
   GoMail,
   GoMarkGithub,
   GoQuestion
@@ -38,8 +39,9 @@ interface LinkItemProps {
   isExternal?: boolean
 }
 const LinkItems: Array<LinkItemProps> = [
-  { name: 'Token Launcher', icon: IoRocketOutline, page: '/' },
-  { name: 'About', icon: GoQuestion, page: '/about' },
+  { name: 'Home', icon: IoRocketOutline, page: '/' },
+  { name: 'Launch App', icon: GoDeviceMobile, page: 'https://app.tokenlauncher.com', isExternal: true },
+  { name: 'Faq', icon: GoQuestion, page: '/faq' },
   { name: 'GitHub', icon: GoMarkGithub, page: 'https://github.com/TokenLauncherCode', isExternal: true },
   { name: 'Contact ', icon: GoMail, page: 'mailto:support@tokenlauncher.com', isExternal: true }
 ]
