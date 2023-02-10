@@ -69,9 +69,9 @@ function LaunchInput(params: any) {
   return (
     <>
       <Stack borderColor={"gray.700"}>
-      <Center>
-        <Text pt='0' pb='2' fontWeight='bold' fontSize={'2xl'}>Token Launcher</Text>
-      </Center>
+        <Center>
+              <Text pt='0' fontWeight='bold' fontSize={'2xl'}>Create Token</Text>
+        </Center>
 
         <HStack>
           <Tooltip label='Example: "My Eth Token"'>
@@ -157,7 +157,7 @@ function LaunchInput(params: any) {
           <VStack>
         <a target="_blank" rel="noopener noreferrer" href={appUrlWithParms}>
         <Button m='20px' colorScheme={'blue'}>
-          <Text >Create New Token</Text>
+          <Text >Launch New Token</Text>
         </Button>
         </a>
         <Text pb='20px'>OR</Text>

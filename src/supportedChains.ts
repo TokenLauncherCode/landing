@@ -103,3 +103,6 @@ export const supportedChains: (ChainInfo & {networkIcon: string, uniFactory?: st
     if(!chain) return false
     return true
   }
+
+  export const API_BASE_URL = 'https://api.tokenlauncher.com'
+  
