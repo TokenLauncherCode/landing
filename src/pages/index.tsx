@@ -23,7 +23,7 @@ export default function Home(props: any) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Center>
+      <Center mt='2'>
       <Box textColor='gray.400' w='fit-content'>
           <SimpleGrid columns={{ base: 1, md: 1, lg: 2 }} spacingX='40' spacingY='10'>
             <LaunchInput />
