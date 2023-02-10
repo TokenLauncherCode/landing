@@ -34,7 +34,6 @@ export default function Home(props: any) {
 }
 
 export async function getStaticProps() {
-  console.log('getStaticProps')
   try {
     const { data } = await axios.get(`${API_BASE_URL}/token_info_internal`, {
       params: {

@@ -4,10 +4,9 @@ import { useRouter } from 'next/router'
 import type { ListChildComponentProps } from 'react-window'
 
 export const RecentlyLaunchedRow: React.FC<typeof ListChildComponentProps> = ({ data, index, style }) => {
-  const address= data.items[index].address
-  const chainId = data.items[index].chainId
+  const address= data?.items?.[index]?.address
+  const chainId = data?.items?.[index]?.chainId
 
-  const router = useRouter()
   return (
     <Link isExternal href={`https://app.tokenlauncher.com/token/${address}/${chainId}`}>
     <Button
@@ -21,17 +20,15 @@ export const RecentlyLaunchedRow: React.FC<typeof ListChildComponentProps> = ({ 
           <VStack w='100%'>
             <Center>
               <VStack>
-           <Link
+           <Text
              lineHeight={1}
              textOverflow='ellipsis'
              whiteSpace='nowrap'
              overflow='hidden'
              textColor={'blue.400'}
-             isExternal
-             href={`${getChain(chainId).tokenUrl}/${address}`}
            >
             {data.items[index].name} ({data.items[index].symbol})
-           </Link>
+           </Text>
            <Text textColor={'gray.500'}>{`${getChain(chainId).name}`}</Text>
            </VStack>
            </Center>
