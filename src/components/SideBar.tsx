@@ -174,7 +174,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
     <Flex
       position={'absolute'}
       left={'2%'}
-      top={'2%'}
+      top={'1%'}
       height="20"
       alignItems="center"
       justifyContent="flex-start"

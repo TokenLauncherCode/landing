@@ -1,9 +1,6 @@
 import {
   Box,
   Center,
-  HStack,
-  Text,
-  VStack
 } from '@chakra-ui/react';
 
 import Head from 'next/head';

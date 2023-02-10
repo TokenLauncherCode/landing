@@ -1,4 +1,4 @@
-import { Box, Button, Center, FormControl, Input, Stack, Tooltip, VStack, HStack, Select, Checkbox, NumberInputField, NumberInput, Divider } from '@chakra-ui/react'
+import { Box, Button, Center, FormControl, Input, Stack, Tooltip, VStack, HStack, Select, Checkbox, NumberInputField, NumberInput } from '@chakra-ui/react'
 import { Text } from '@chakra-ui/react'
 import { useState } from 'react'   
 import { supportedChains } from '@/supportedChains'
