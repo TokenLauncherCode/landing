@@ -1,4 +1,4 @@
-import { Box, Button, Center, FormControl, Input, Stack, Tooltip, VStack, HStack, Select, Checkbox, NumberInputField, NumberInput } from '@chakra-ui/react'
+import { Box, Button, Center, FormControl, Input, Stack, Tooltip, VStack, HStack, Select, Checkbox, NumberInputField, NumberInput, Divider } from '@chakra-ui/react'
 import { Text } from '@chakra-ui/react'
 import { useState } from 'react'   
 import { supportedChains } from '@/supportedChains'
@@ -62,8 +62,9 @@ function LaunchInput(params: any) {
     else selectNetworkChoices.push(`${supportedChains[i].name}`)
   }
 
-  const appUrlWithParms = `https://app.tokenlauncher.com`
+  const appUrlWithParms = `https://app.tokenlauncher.com?name=${name}`
 
+  console.log('appUrlWithParms', appUrlWithParms)
   return (
     <>
       <Stack borderColor={"gray.700"}>
@@ -152,11 +153,19 @@ function LaunchInput(params: any) {
           </HStack>
         </HStack>
         <Center >
+          <VStack>
         <a target="_blank" rel="noopener noreferrer" href={appUrlWithParms}>
-        <Button mt='20px' colorScheme={'blue'}>
-          <Text >Create Token</Text>
+        <Button m='20px' colorScheme={'blue'}>
+          <Text >Create New Token</Text>
         </Button>
         </a>
+        <Text pb='20px'>OR</Text>
+        <HStack>
+          <Button>Create Airdrop</Button>
+          <Button>List on Uniswap</Button>
+          <Button>Setup Farming</Button>
+        </HStack>
+        </VStack>
       </Center>
       </Stack>
     </>
