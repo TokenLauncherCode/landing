@@ -12,6 +12,7 @@ import {
   useDisclosure,
   BoxProps,
   FlexProps,
+  Text
 } from '@chakra-ui/react';
 import {
   FiMenu,
@@ -94,7 +95,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
 
       {LinkItems.map((link) => (
         <NavItem isExternal={link.isExternal} onClose={onClose} page={link.page} key={link.name} icon={link.icon}>
-          {link.name}
+          <Text fontWeight={'bold'}>{link.name}</Text>
         </NavItem>
       ))}
     </Box>
@@ -113,7 +114,6 @@ const NavItem = ({ onClose, page, icon, children, isExternal, ...rest }: NavItem
   return (
     <NextLink href={`${page}`} passHref>
       <Flex
-        onClick={onClose}
         align="center"
         p="4"
         mx="4"
