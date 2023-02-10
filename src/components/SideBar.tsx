@@ -9,12 +9,9 @@ import {
   Link,
   Drawer,
   DrawerContent,
-  Text,
   useDisclosure,
   BoxProps,
   FlexProps,
-  Center,
-  HStack
 } from '@chakra-ui/react';
 import {
   FiMenu,
@@ -113,7 +110,7 @@ interface NavItemProps extends FlexProps {
 }
 const NavItem = ({ onClose, page, icon, children, isExternal, ...rest }: NavItemProps) => {
   return (
-    <NextLink href={`${page}`} passHref><Link onClick={onClose} isExternal href={`${page}`} style={{ textDecoration: 'none' }} _focus={{ boxShadow: 'none' }}>
+    <Link as={NextLink} onClick={onClose} isExternal href={`${page}`} style={{ textDecoration: 'none' }} _focus={{ boxShadow: 'none' }}>
       <Flex
         align="center"
         p="4"
@@ -138,8 +135,7 @@ const NavItem = ({ onClose, page, icon, children, isExternal, ...rest }: NavItem
         )}
         {children}
       </Flex>
-    </Link></NextLink>
-  )
+    </Link>)
 };
 
 interface MobileProps extends FlexProps {

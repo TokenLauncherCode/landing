@@ -62,6 +62,8 @@ function LaunchInput(params: any) {
     else selectNetworkChoices.push(`${supportedChains[i].name}`)
   }
 
+  const appUrlWithParms = `https://app.tokenlauncher.com`
+
   return (
     <>
       <Stack borderColor={"gray.700"}>
@@ -150,7 +152,7 @@ function LaunchInput(params: any) {
           </HStack>
         </HStack>
         <Center >
-        <a target="_blank" rel="noopener noreferrer" href={`https://app.tokenlauncher.com`}>
+        <a target="_blank" rel="noopener noreferrer" href={appUrlWithParms}>
         <Button mt='20px' colorScheme={'blue'}>
           <Text >Create Token</Text>
         </Button>
