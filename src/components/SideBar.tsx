@@ -113,6 +113,7 @@ const NavItem = ({ onClose, page, icon, children, isExternal, ...rest }: NavItem
   return (
     <NextLink href={`${page}`} passHref>
       <Flex
+        onClick={onClose}
         align="center"
         p="4"
         mx="4"
