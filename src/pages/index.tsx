@@ -2,8 +2,6 @@ import {
   Box,
   Center,
   SimpleGrid,
-  Stack,
-  Text
 } from '@chakra-ui/react';
 
 import Head from 'next/head';
@@ -35,8 +33,8 @@ export default function Home(props: any) {
   )
 }
 
-// This is called at build time
 export async function getStaticProps() {
+  console.log('getStaticProps')
   try {
     const { data } = await axios.get(`${API_BASE_URL}/token_info_internal`, {
       params: {
