@@ -114,7 +114,7 @@ interface NavItemProps extends FlexProps {
 const NavItem = ({ onClose, page, icon, children, isExternal, ...rest }: NavItemProps) => {
   if(!isExternal)
   return (
-    <NextLink href={`${page}`} passHref>
+    <NextLink onClick={onClose} href={`${page}`} passHref>
       <Flex
         align="center"
         p="4"
