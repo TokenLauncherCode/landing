@@ -13,8 +13,14 @@ import { LatestLaunches } from '@/components/LatestLaunches';
 import axios from 'axios';
 import { API_BASE_URL, supportedChains } from '@/supportedChains';
 import About from '@/components/About';
+import { useEffect } from 'react';
 
 export default function Home(props: any) {
+
+  useEffect( () => {
+    window.localStorage.setItem('chakra-ui-color-mode', 'dark')
+  }, [])
+
   return (
     <>
       <Head>
