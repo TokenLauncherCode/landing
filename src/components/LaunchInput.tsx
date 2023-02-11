@@ -64,7 +64,7 @@ function LaunchInput(params: any) {
 
   // todo figure out the best way to pass launch params when we redirect
   // maybe a hex encoded string?
-  const appUrlWithParms = `${APP_BASE_URL}?name=${name}&symbol=${symbol}&totalSupply=${totalSupply}&decimals=${decimals}&blockchain=${blockchain}&mintable=${mintable}&pausable=${pausable}&uniswap=${uniswap}`
+  const appUrlWithParms = `${APP_BASE_URL}?name=${name ?? ''}&symbol=${symbol ?? ''}&totalSupply=${totalSupply ?? ''}&decimals=${decimals ?? ''}&blockchain=${blockchain ?? ''}&mintable=${mintable ?? ''}&pausable=${pausable ?? ''}&uniswap=${uniswap ?? ''}`
 
   return (
     <>
