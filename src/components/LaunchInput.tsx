@@ -1,7 +1,7 @@
 import { Box, Button, Center, FormControl, Input, Stack, Tooltip, VStack, HStack, Select, Checkbox, NumberInputField, NumberInput, Divider } from '@chakra-ui/react'
 import { Text } from '@chakra-ui/react'
 import { useState } from 'react'   
-import { supportedChains } from '@/supportedChains'
+import { APP_BASE_URL, supportedChains } from '@/supportedChains'
 
 export type Erc20LaunchDetails = {
   contractType: string
@@ -64,7 +64,7 @@ function LaunchInput(params: any) {
 
   // todo figure out the best way to pass launch params when we redirect
   // maybe a hex encoded string?
-  const appUrlWithParms = `https://app.tokenlauncher.com`
+  const appUrlWithParms = `${APP_BASE_URL}?name=${name}&symbol=${symbol}&totalSupply=${totalSupply}&decimals=${decimals}&blockchain=${blockchain}&mintable=${mintable}&pausable=${pausable}&uniswap=${uniswap}`
 
   return (
     <>

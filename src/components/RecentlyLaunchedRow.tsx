@@ -1,4 +1,4 @@
-import { getChain } from '@/supportedChains'
+import { APP_BASE_URL, getChain } from '@/supportedChains'
 import { Box, Button, Center, Flex, HStack, Link, Text, VStack } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
 import type { ListChildComponentProps } from 'react-window'
@@ -8,7 +8,7 @@ export const RecentlyLaunchedRow: React.FC<typeof ListChildComponentProps> = ({ 
   const chainId = data?.items?.[index]?.chainId
 
   return (
-    <Link isExternal href={`https://app.tokenlauncher.com/token/${address}/${chainId}`}>
+    <Link isExternal href={`${APP_BASE_URL}/token/${address}/${chainId}`}>
     <Button
       variant='ghost'
       justifyContent='space-between'

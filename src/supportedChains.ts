@@ -104,5 +104,10 @@ export const supportedChains: (ChainInfo & {networkIcon: string, uniFactory?: st
     return true
   }
 
+  
   export const API_BASE_URL = 'https://api.tokenlauncher.com'
+  //export const API_BASE_URL = 'http://localhost:3000'
+  
+  export const APP_BASE_URL = 'https://app.tokenlauncher.com'
+  // export const APP_BASE_URL = 'http://localhost:8080'
   
