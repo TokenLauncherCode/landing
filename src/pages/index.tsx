@@ -14,6 +14,7 @@ import axios from 'axios';
 import { API_BASE_URL, supportedChains } from '@/supportedChains';
 import About from '@/components/About';
 import { useEffect } from 'react';
+import { IoRocketOutline } from 'react-icons/io5';
 
 export default function Home(props: any) {
 
@@ -31,26 +32,25 @@ export default function Home(props: any) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Box>
-      <Box>
-      <SimpleGrid columns={{ base: 1, md: 1, lg: 2 }} mr={{ base: '0em', md: '10em', lg: '20em' }} >
+      <SimpleGrid columns={{ base: 1, md: 1, lg: 1, xl: 2 }}>
 
           <VStack pt='1.5em'>
-            <Box w='fit-content'>
               <LaunchInput />
-            </Box>
-          </VStack>          
-            <VStack pt='1.5em'>
-            <Box w='fit-content'>
-              <LatestLaunches data={props?.newData ?? []} />
+          </VStack>
+
+          <VStack pt='1.5em'>
+              <About/>
+            </VStack>
+        
+          </SimpleGrid> 
+          
+          <VStack pt='1.5em'>
+              <Box alignSelf={'center'}>
+            <LatestLaunches data={props?.newData ?? []} />
             </Box>
             </VStack>
-          </SimpleGrid> 
+
           </Box>
-        <Box w='fit-content'>
-        <Divider p='1.5em' />
-        <About />
-        </Box>
-        </Box>
     </>
   )
 }

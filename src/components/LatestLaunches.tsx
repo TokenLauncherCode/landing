@@ -1,31 +1,42 @@
+import { APP_BASE_URL, getChain } from '@/supportedChains';
 import {
+  Button,
   Center,
+  Container,
+  HStack,
+  Link,
+  SimpleGrid,
   Stack,
-  Text
+  Text,
+  VStack
 } from '@chakra-ui/react';
-import { FixedSizeList } from 'react-window';
-import { RecentlyLaunchedRow } from './RecentlyLaunchedRow';
 
 export function LatestLaunches(params: any) {
 
-  const list = params?.data.slice(0, 5)
+  const list = params?.data.slice(0, 6)
 
   return (
     <Stack borderColor={"gray.700"}>
       <Center>
-        <Text fontWeight='bold' fontSize={'2xl'}>Latest Token Launches</Text>
+        <Text bgGradient='linear(to-l, #7928FF, #33CC80)' bgClip='text' fontWeight='bold' fontSize={'3xl'}>Latest Token Launches</Text>
       </Center>
 
-      <FixedSizeList
-        itemSize={80}
-        height={400}
-        itemData={{
-          items: list,
-        }}
-        itemCount={list.length}
-      >
-        {RecentlyLaunchedRow}
-      </FixedSizeList>
+      <Container>
+            <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={'2em'} >
+              {list.map((listItem: any) => (
+                <HStack key={listItem.address} align={'top'}>
+                  <Link style={{textDecoration: 'none'}} href={`${APP_BASE_URL}/token/${listItem.address}/${listItem.chainId}`} isExternal>
+                  <Button backgroundColor={'#00000000'} p='2em'>
+                  <VStack align={'start'}>
+                    <Link textColor={'blue.400'} fontWeight={600}>{listItem.name} ({listItem.symbol})</Link>
+                    <Text color={'gray.500'}>{getChain(listItem.chainId).name}</Text>
+                  </VStack>
+                  </Button>
+                  </Link>
+                </HStack>
+              ))}
+            </SimpleGrid>
+          </Container>
     </Stack>
   )
 }

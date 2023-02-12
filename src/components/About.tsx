@@ -30,12 +30,12 @@ import {
     {
       id: 0,
       title: 'No Coding Required',
-      text: 'Automatically generate solidity code and deploy your token on-chain.',
+      text: 'Automatically generate solidity code and deploy token',
     },
     {
       id: 1,
-      title: 'Tradeable on Uniswap',
-      text: 'Your token is tradeable on Uniswap by default, Choose starting price & liquidity to be enable trading with thousands of other defi tokens.',
+      title: 'Added to Uniswap',
+      text: 'Automatically added to uniwap with any price & liquidity',
     },
     {
       id: 2,
@@ -45,25 +45,25 @@ import {
     {
       id: 3,
       title: 'No Gas Testnet Deploys',
-      text: 'We pay all gas fees for testnet launched. Easily build, deploy & test proof of concept tokens.',
+      text: 'We pay gas fees for all testnet deploys',
     },
     {
       id: 4,
       title: 'Supports all EVM Chains',
-      text: 'Deploy your token on any Ethereum / EVM compatible blockchain. Includes uniswap trading on Ethereum Mainnet (and testnet), Polygon, Arbitrum, Optimism',
+      text: 'Deploy your token on any Ethereum EVM compatible blockchain.',
     },
     {
       id: 5,
-      title: 'Airdrops & Farming (Coming Soon)',
-      text: 'Airdrop your token to millions of users and incentivize liquidity with farming rewards.',
+      title: 'Airdrops & Farming',
+      text: 'Airdrop your token & setup farming programs (coming soon)',
     },
   ]
   
   export default function About() {
     return (
       <>
-          <Container maxW={'6xl'} mt={10}>
-            <SimpleGrid columns={{ base: 2, md: 2, lg: 3 }} spacing={10}>
+          <Container>
+            <SimpleGrid columns={{ base: 2, md: 2, lg: 3 }} spacingY={5} mt='2.5em'>
               {features.map((feature) => (
                 <HStack key={feature.id} align={'top'}>
                   <Box color={'green.400'} px={2}>

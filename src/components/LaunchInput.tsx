@@ -70,7 +70,7 @@ function LaunchInput(params: any) {
     <>
       <Stack borderColor={"gray.700"}>
         <Center>
-              <Text pt='0' fontWeight='bold' fontSize={'2xl'}>Create Token</Text>
+              <Text pt='0' bgGradient='linear(to-l, #7928FF, #33CC80)' bgClip='text'  fontWeight='bold' fontSize={'3xl'}>Create Token</Text>
         </Center>
 
         <HStack>
@@ -160,7 +160,6 @@ function LaunchInput(params: any) {
           <Text >Launch New Token</Text>
         </Button>
         </a>
-        <Divider></Divider>
         <Text pt='5' fontWeight={'bold'}>Existing Token Holders</Text>
         <HStack>
           <Button size='sm'>Airdrop</Button>
