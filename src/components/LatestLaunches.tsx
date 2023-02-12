@@ -28,7 +28,7 @@ export function LatestLaunches(params: any) {
                   <Link style={{textDecoration: 'none'}} href={`${APP_BASE_URL}/token/${listItem.address}/${listItem.chainId}`} isExternal>
                   <Button backgroundColor={'#00000000'} p='2em'>
                   <VStack align={'start'}>
-                    <Link textColor={'blue.400'} fontWeight={600}>{listItem.name} ({listItem.symbol})</Link>
+                    <Text textColor={'blue.400'} fontWeight={600}>{listItem.name} ({listItem.symbol})</Text>
                     <Text color={'gray.500'}>{getChain(listItem.chainId).name}</Text>
                   </VStack>
                   </Button>

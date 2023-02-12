@@ -42,7 +42,7 @@ export default function Home(props: any) {
               <About/>
             </VStack>
 
-  <Box></Box>        
+        <Box></Box>        
 
         <VStack pt='1.5em'>
               <Box alignSelf={'center'}>
