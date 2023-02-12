@@ -100,7 +100,7 @@ function LaunchInput(params: any) {
           </Tooltip>
         </HStack>
         <HStack>
-          <Tooltip label="Total number of tokens to create. Example: 42069">
+          <Tooltip label="Total number of tokens to create. Example: 5000000">
             <FormControl isInvalid={!!supplyValidationError}>
               <NumberInput borderColor={"gray.700"}>
                 <NumberInputField placeholder='Total Supply'
