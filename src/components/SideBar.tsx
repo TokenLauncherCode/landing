@@ -12,7 +12,9 @@ import {
   useDisclosure,
   BoxProps,
   FlexProps,
-  Text
+  Text,
+  Center,
+  HStack
 } from '@chakra-ui/react';
 import {
   FiMenu,
@@ -26,7 +28,11 @@ import {
 } from 'react-icons/go';
 
 import {
-  IoRocketOutline
+  GiFarmTractor, GiParachute, GiUnicorn
+} from 'react-icons/gi';
+
+import {
+  IoRocketOutline, IoSwapHorizontal
 } from 'react-icons/io5';
 
 import { IconType } from 'react-icons';
@@ -39,9 +45,15 @@ interface LinkItemProps {
   icon: IconType
   isExternal?: boolean
 }
-const LinkItems: Array<LinkItemProps> = [
-  { name: 'Home', icon: IoRocketOutline, page: '/' },
-  { name: 'Launch App', icon: GoDeviceMobile, page: `${APP_BASE_URL}`, isExternal: true },
+const LinkItemsTop: Array<LinkItemProps> = [
+  { name: 'Token Launcher', icon: IoRocketOutline, page: '/' },
+  { name: 'List on Uniswap', icon: GiUnicorn, page: '#'},
+  { name: 'Airdrop Token', icon: GiParachute, page: '#' },
+  { name: 'Setup Farming', icon: GiFarmTractor, page: '#'},
+]
+
+const LinkItemsBottom: Array<LinkItemProps> = [
+
   { name: 'Faq', icon: GoQuestion, page: '/faq' },
   { name: 'GitHub', icon: GoMarkGithub, page: 'https://github.com/TokenLauncherCode', isExternal: true },
   { name: 'Contact ', icon: GoMail, page: 'mailto:support@tokenlauncher.com', isExternal: true }
@@ -96,11 +108,22 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
         </Flex>
       </NextLink>
 
-      {LinkItems.map((link) => (
-        <NavItem isExternal={link.isExternal} onClose={onClose} page={link.page} key={link.name} icon={link.icon}>
-          <Text fontWeight={'bold'}>{link.name}</Text>
-        </NavItem>
-      ))}
+      <Box>
+        {LinkItemsTop.map((link) => (
+          <NavItem isExternal={link.isExternal} onClose={onClose} page={link.page} key={link.name} icon={link.icon}>
+            <Text fontWeight={'bold'}>{link.name}</Text>
+          </NavItem>
+        ))}
+      </Box>
+
+      <Box mt='2em'>
+        {LinkItemsBottom.map((link) => (
+          <NavItem isExternal={link.isExternal} onClose={onClose} page={link.page} key={link.name} icon={link.icon}>
+            <Text fontWeight={'bold'}>{link.name}</Text>
+          </NavItem>
+        ))}
+      </Box>
+
     </Box>
   );
 };

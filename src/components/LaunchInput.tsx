@@ -135,7 +135,8 @@ function LaunchInput(params: any) {
             </Select>
           </Tooltip>
         </Box>
-        <HStack pl='10px'>
+        <Center>
+        <HStack mt='1em'pl='10px'>
             <HStack>
               <Checkbox isChecked={pausable} borderColor='gray.500' size='md' colorScheme='blue' onChange={(event) => setPausable(event.target.checked)}>
                 Pausable
@@ -153,19 +154,14 @@ function LaunchInput(params: any) {
             </Checkbox>
           </HStack>
         </HStack>
+        </Center>
         <Center >
           <VStack>
         <a target="_blank" rel="noopener noreferrer" href={appUrlWithParms}>
-        <Button m='20px' colorScheme={'gray'}>
-          <Text >Launch New Token</Text>
+        <Button p='1.5em' mt='1em' colorScheme={'gray'}>
+          <Text  fontSize='lg' fontWeight={'bold'} >Launch Token Now</Text>
         </Button>
         </a>
-        <Text pt='5' fontWeight={'bold'}>Existing Token Holders</Text>
-        <HStack>
-          <Button size='sm'>Airdrop</Button>
-          <Button size='sm'>Add to Uniswap</Button>
-          <Button size='sm'>Setup Farming</Button>
-        </HStack>
         </VStack>
       </Center>
       </Stack>
