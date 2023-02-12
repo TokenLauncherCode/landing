@@ -18,7 +18,7 @@ export function LatestLaunches(params: any) {
   return (
     <Stack borderColor={"gray.700"}>
       <Center>
-        <Text textColor='gray.400' fontWeight='bold' fontSize={'2xl'}>Latest Tokens by Liquidity</Text>
+        <Text textColor='gray.400' fontWeight='bold' fontSize={'2xl'}>Top Tokens by Liquidity</Text>
       </Center>
 
       <Container>
@@ -29,8 +29,8 @@ export function LatestLaunches(params: any) {
                   <Button backgroundColor={'#00000000'} p='3em'>
                   <VStack align={'start'}>
                     <Text textColor={'blue.400'} fontWeight={600}>{listItem.name} ({listItem.symbol})</Text>
-                    <Text textColor='gray.400'>$5144.43</Text>
-                    <Text textColor='green.500'>$1.40 </Text>
+                    <Text textColor='gray.400'>${listItem.liquidityData.tvlUsd}</Text>
+                    <Text textColor='green.500'>${listItem.liquidityData.priceUsd} </Text>
                     <Text color={'gray.500'}>{getChain(listItem.chainId).name}</Text>
                   </VStack>
                   </Button>

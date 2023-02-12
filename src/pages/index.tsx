@@ -57,6 +57,7 @@ export default function Home(props: any) {
   )
 }
 
+// this can be slow becasue it calls endpoint for each token but its ok because only called on build
 export async function getStaticProps() {
   try {
 
@@ -68,8 +69,7 @@ export async function getStaticProps() {
           chainId: supportedChains[i].id,
         }
       })
-      datas.push(d)
-  
+      datas.push(d)  
     }
 
     let allNewData = [] as any
@@ -81,15 +81,35 @@ export async function getStaticProps() {
           name: item.name,
           symbol: item.symbol,
           address: item.address,
-          chainId: item.chainId
+          chainId: item.chainId,
+          decimals: item.decimals
         }
       }).filter( (item) => item.chainId !== 5)
       
       allNewData = allNewData.concat(newData)
     }
 
+    const liquidityData = [] as any
+    for(let i=0;i<allNewData.length;i++) {
+      const { data: d } = await axios.get(`${API_BASE_URL}/token_liquidity`, {
+        params: {
+          chainId: allNewData[i].chainId,
+          address: allNewData[i].address,
+          decimals: allNewData[i].decimals,
+        }
+      })
+      liquidityData[i]=d.liquidity
+    }
+
+    const dataSorted = allNewData.map( (data: any, i: number) => ({
+      ...data,
+      liquidityData: liquidityData[i]
+    })).sort( (a: any, b: any) => {
+      return parseFloat(b.liquidityData.tvlUsd) - parseFloat(a.liquidityData.tvlUsd)
+    })
+
     return {
-      props: { newData: allNewData },
+      props: { newData: dataSorted },
     };
   } catch (error) {
     console.error(error);
