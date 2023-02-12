@@ -70,7 +70,7 @@ function LaunchInput(params: any) {
     <>
       <Stack borderColor={"gray.700"}>
         <Center>
-              <Text pt='0' bgGradient='linear(to-l, #7928FF, #33CC80)' bgClip='text' fontWeight='bold' fontSize={'3xl'}>Create Token</Text>
+              <Text pb='0.5em' bgGradient='linear(to-l, #7928FF, #33CC80)' bgClip='text' fontWeight='bold' fontSize={'3xl'}>Create Token</Text>
         </Center>
 
         <HStack mt='2em'>

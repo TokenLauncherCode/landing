@@ -18,17 +18,19 @@ export function LatestLaunches(params: any) {
   return (
     <Stack borderColor={"gray.700"}>
       <Center>
-        <Text textColor='gray.400' fontWeight='bold' fontSize={'2xl'}>Latest Token Launches</Text>
+        <Text textColor='gray.400' fontWeight='bold' fontSize={'2xl'}>Latest Tokens by Liquidity</Text>
       </Center>
 
       <Container>
-            <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={'2em'} >
+            <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacingY={'2em'} pt='1em' >
               {list.map((listItem: any) => (
                 <HStack key={listItem.address} align={'top'}>
                   <Link style={{textDecoration: 'none'}} href={`${APP_BASE_URL}/token/${listItem.address}/${listItem.chainId}`} isExternal>
-                  <Button backgroundColor={'#00000000'} p='2em'>
+                  <Button backgroundColor={'#00000000'} p='3em'>
                   <VStack align={'start'}>
                     <Text textColor={'blue.400'} fontWeight={600}>{listItem.name} ({listItem.symbol})</Text>
+                    <Text textColor='gray.400'>$5144.43</Text>
+                    <Text textColor='green.500'>$1.40 </Text>
                     <Text color={'gray.500'}>{getChain(listItem.chainId).name}</Text>
                   </VStack>
                   </Button>

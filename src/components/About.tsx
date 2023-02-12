@@ -64,10 +64,10 @@ import {
       <>
           <Container>
           <Center>
-        <Text color='gray.400' fontWeight='bold' fontSize={'3xl'}>Features</Text>
+        <Text color='gray.400' fontWeight='bold' fontSize={'3xl'} pb='0.5em'>Features</Text>
       </Center>
 
-            <SimpleGrid columns={{ base: 2, md: 2, lg: 3 }} mt='2em'>
+            <SimpleGrid columns={{ base: 2, md: 2, lg: 3 }}>
               {features.map((feature) => (
                 <HStack key={feature.id} align={'top'}>
                   <Box color={'green.400'} px={2}>
