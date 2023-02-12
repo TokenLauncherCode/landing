@@ -18,7 +18,7 @@ export function LatestLaunches(params: any) {
   return (
     <Stack borderColor={"gray.700"}>
       <Center>
-        <Text bgGradient='linear(to-l, #7928FF, #33CC80)' bgClip='text' fontWeight='bold' fontSize={'3xl'}>Latest Token Launches</Text>
+        <Text bgGradient='linear(to-l, #33CC80, #7928FF)' bgClip='text' fontWeight='bold' fontSize={'3xl'}>Latest Token Launches</Text>
       </Center>
 
       <Container>

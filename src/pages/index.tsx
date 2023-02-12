@@ -41,14 +41,16 @@ export default function Home(props: any) {
           <VStack pt='1.5em'>
               <About/>
             </VStack>
-        
-          </SimpleGrid> 
-          
-          <VStack pt='1.5em'>
+
+  <Box></Box>        
+
+        <VStack pt='1.5em'>
               <Box alignSelf={'center'}>
             <LatestLaunches data={props?.newData ?? []} />
             </Box>
             </VStack>
+          </SimpleGrid> 
+        
 
           </Box>
     </>
