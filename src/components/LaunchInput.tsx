@@ -70,10 +70,10 @@ function LaunchInput(params: any) {
     <>
       <Stack borderColor={"gray.700"}>
         <Center>
-              <Text pt='0' bgGradient='linear(to-l, #7928FF, #33CC80)' bgClip='text'  fontWeight='bold' fontSize={'3xl'}>Create Token</Text>
+              <Text pt='0' bgGradient='linear(to-l, #7928FF, #33CC80)' bgClip='text' fontWeight='bold' fontSize={'3xl'}>Create Token</Text>
         </Center>
 
-        <HStack>
+        <HStack mt='2em'>
           <Tooltip label='Example: "My Eth Token"'>
             <FormControl borderColor={"gray.700"} isInvalid={!!nameValidationError}>
               <Input autoFocus={true} placeholder='Name'
@@ -156,7 +156,7 @@ function LaunchInput(params: any) {
         <Center >
           <VStack>
         <a target="_blank" rel="noopener noreferrer" href={appUrlWithParms}>
-        <Button m='20px' colorScheme={'green'}>
+        <Button m='20px' colorScheme={'gray'}>
           <Text >Launch New Token</Text>
         </Button>
         </a>

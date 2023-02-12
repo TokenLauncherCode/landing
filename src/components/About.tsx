@@ -34,8 +34,8 @@ import {
     },
     {
       id: 1,
-      title: 'Added to Uniswap',
-      text: 'Automatically added to uniwap with any price & liquidity',
+      title: 'Defi Trading',
+      text: 'Automatically added to Uniswap at any starting price & liquidity amount ',
     },
     {
       id: 2,
@@ -63,7 +63,11 @@ import {
     return (
       <>
           <Container>
-            <SimpleGrid columns={{ base: 2, md: 2, lg: 3 }} spacingY={5} mt='2.5em'>
+          <Center>
+        <Text color='gray.400' fontWeight='bold' fontSize={'3xl'}>Features</Text>
+      </Center>
+
+            <SimpleGrid columns={{ base: 2, md: 2, lg: 3 }} mt='2em'>
               {features.map((feature) => (
                 <HStack key={feature.id} align={'top'}>
                   <Box color={'green.400'} px={2}>
