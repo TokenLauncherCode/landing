@@ -9,6 +9,7 @@ import axios from 'axios';
 import { API_BASE_URL, supportedChains } from '@/supportedChains';
 import About from '@/components/About';
 import { useEffect } from 'react';
+import SideBar from '@/components/SideBar';
 
 export default function Home(props: any) {
 
@@ -17,7 +18,7 @@ export default function Home(props: any) {
   }, [])
 
   return (
-    <>
+    <SideBar>
       <Head>
         <title>Token Launcher</title>
         <meta name="description" content="Create erc20 tokens that are traded uniswap, farming programs with any APR, and airdrop on any evm chain. Free testnet launches" />
@@ -34,7 +35,7 @@ export default function Home(props: any) {
       <div>blah</div>
       <LatestLaunches data={props?.newData ?? []} />
       </SimpleGrid>  */}
-    </>
+      </SideBar>
   )
 }
 
