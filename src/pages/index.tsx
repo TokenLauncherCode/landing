@@ -1,7 +1,5 @@
 import {
-  Box,
   SimpleGrid,
-  VStack
 } from '@chakra-ui/react';
 
 import Head from 'next/head';
@@ -28,11 +26,10 @@ export default function Home(props: any) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <SimpleGrid columns={{ base: 1, md: 1, lg: 1, xl: 2 }}>
-
       <LaunchInput />
       <About/>
       <div></div>
-      <LatestLaunches data={props?.newData ?? []} />
+      {/* <LatestLaunches data={props?.newData ?? []} /> */}
       </SimpleGrid> 
     </>
   )
