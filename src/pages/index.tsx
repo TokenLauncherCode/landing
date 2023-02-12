@@ -1,9 +1,6 @@
 import {
   Box,
-  Center,
-  Divider,
   SimpleGrid,
-  Text,
   VStack
 } from '@chakra-ui/react';
 
@@ -14,7 +11,6 @@ import axios from 'axios';
 import { API_BASE_URL, supportedChains } from '@/supportedChains';
 import About from '@/components/About';
 import { useEffect } from 'react';
-import { IoRocketOutline } from 'react-icons/io5';
 
 export default function Home(props: any) {
 
