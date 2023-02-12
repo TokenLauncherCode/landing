@@ -14,9 +14,9 @@ import { useEffect } from 'react';
 
 export default function Home(props: any) {
 
-  // useEffect( () => {
-  //   window.localStorage.setItem('chakra-ui-color-mode', 'dark')
-  // }, [])
+  useEffect( () => {
+    window.localStorage.setItem('chakra-ui-color-mode', 'dark')
+  }, [])
 
   return (
     <>
@@ -27,28 +27,13 @@ export default function Home(props: any) {
         <meta name="google-site-verification" content="mn1wCy3-7CBieV3wdh4msPmcH2I6W6F3TeSGVRj8x40" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Box>
       <SimpleGrid columns={{ base: 1, md: 1, lg: 1, xl: 2 }}>
 
-          <VStack pt='1.5em'>
-              <LaunchInput />
-          </VStack>
-
-          <VStack pt='1.5em'>
-              <About/>
-            </VStack>
-
-        <Box></Box>        
-
-        <VStack pt='1.5em'>
-              <Box alignSelf={'center'}>
-            <LatestLaunches data={props?.newData ?? []} />
-            </Box>
-            </VStack>
-          </SimpleGrid> 
-        
-
-          </Box>
+      <LaunchInput />
+      <About/>
+      <div></div>
+      <LatestLaunches data={props?.newData ?? []} />
+      </SimpleGrid> 
     </>
   )
 }

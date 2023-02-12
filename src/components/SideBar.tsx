@@ -13,15 +13,12 @@ import {
   BoxProps,
   FlexProps,
   Text,
-  Center,
-  HStack
 } from '@chakra-ui/react';
 import {
   FiMenu,
 } from 'react-icons/fi';
 
 import {
-  GoDeviceMobile,
   GoMail,
   GoMarkGithub,
   GoQuestion
@@ -32,12 +29,11 @@ import {
 } from 'react-icons/gi';
 
 import {
-  IoRocketOutline, IoSwapHorizontal
+  IoRocketOutline
 } from 'react-icons/io5';
 
 import { IconType } from 'react-icons';
 import NextLink from 'next/link'
-import { APP_BASE_URL } from '@/supportedChains';
 
 interface LinkItemProps {
   name: string
@@ -47,9 +43,9 @@ interface LinkItemProps {
 }
 const LinkItemsTop: Array<LinkItemProps> = [
   { name: 'Token Launcher', icon: IoRocketOutline, page: '/' },
-  { name: 'List on Uniswap', icon: GiUnicorn, page: '#'},
-  { name: 'Airdrop Token', icon: GiParachute, page: '#' },
-  { name: 'Setup Farming', icon: GiFarmTractor, page: '#'},
+  { name: 'List on Uniswap', icon: GiUnicorn, page: '/faq'},
+  { name: 'Airdrop Token', icon: GiParachute, page: '/faq' },
+  { name: 'Setup Farming', icon: GiFarmTractor, page: '/faq'},
 ]
 
 const LinkItemsBottom: Array<LinkItemProps> = [

@@ -1,27 +1,12 @@
 import {
     Box,
     Container,
-    Heading,
     SimpleGrid,
     Icon,
     Text,
-    Stack,
     HStack,
     VStack,
-    Button,
     Center,
-    LinkBox,
-    LinkOverlay,
-    Link,
-    IconButton,
-    Flex,
-    useColorModeValue,
-    MenuButton,
-    Menu,
-    Avatar,
-    MenuList,
-    MenuItem,
-    MenuDivider
   } from '@chakra-ui/react';
   import { CheckIcon } from '@chakra-ui/icons';
 
@@ -50,7 +35,7 @@ import {
     {
       id: 4,
       title: 'Supports all EVM Chains',
-      text: 'Deploy your token on any Ethereum EVM compatible blockchain.',
+      text: 'Deploy on any Ethereum EVM compatible blockchain',
     },
     {
       id: 5,
@@ -61,16 +46,14 @@ import {
   
   export default function About() {
     return (
-      <>
-          <Container>
-          <Center>
-        <Text color='gray.400' fontWeight='bold' fontSize={'3xl'} pb='0.5em'>Features</Text>
-      </Center>
-
-            <SimpleGrid columns={{ base: 2, md: 2, lg: 3 }}>
+        <Container pt='0.5em' w='fit-content'>
+        <Center pt='1em' pb='1em'>
+              <Text textColor='gray.400' fontWeight='bold' fontSize={'3xl'}>Features</Text>
+        </Center>
+            <SimpleGrid columns={{ base: 2, md: 2, lg: 3 }} spacingY='1em'>
               {features.map((feature) => (
                 <HStack key={feature.id} align={'top'}>
-                  <Box color={'green.400'} px={2}>
+                  <Box color={'green.400'}>
                     <Icon as={CheckIcon} />
                   </Box>
                   <VStack align={'start'}>
@@ -81,7 +64,6 @@ import {
               ))}
             </SimpleGrid>
           </Container>
-      </>
     )
   }
   

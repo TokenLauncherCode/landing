@@ -1,4 +1,4 @@
-import { Box, Button, Center, FormControl, Input, Stack, Tooltip, VStack, HStack, Select, Checkbox, NumberInputField, NumberInput, Divider } from '@chakra-ui/react'
+import { Box, Button, Center, FormControl, Input, Stack, Tooltip, VStack, HStack, Select, Checkbox, NumberInputField, NumberInput, Divider, Container } from '@chakra-ui/react'
 import { Text } from '@chakra-ui/react'
 import { useState } from 'react'   
 import { APP_BASE_URL, supportedChains } from '@/supportedChains'
@@ -68,12 +68,12 @@ function LaunchInput(params: any) {
 
   return (
     <>
-      <Stack borderColor={"gray.700"}>
-        <Center>
-              <Text pb='0.5em' bgGradient='linear(to-l, #7928FF, #33CC80)' bgClip='text' fontWeight='bold' fontSize={'3xl'}>Create Token</Text>
+      <Container w='fit-content' pt='0.5em'>
+        <Center pt='1em' pb='1em'>
+              <Text bgGradient='linear(to-l, #7928FF, #33CC80)' bgClip='text' fontWeight='bold' fontSize={'3xl'}>Create Token</Text>
         </Center>
 
-        <HStack mt='2em'>
+        <HStack>
           <Tooltip label='Example: "My Eth Token"'>
             <FormControl borderColor={"gray.700"} isInvalid={!!nameValidationError}>
               <Input autoFocus={true} placeholder='Name'
@@ -136,7 +136,7 @@ function LaunchInput(params: any) {
           </Tooltip>
         </Box>
         <Center>
-        <HStack mt='1em'pl='10px'>
+        <HStack mt='1em'>
             <HStack>
               <Checkbox isChecked={pausable} borderColor='gray.500' size='md' colorScheme='blue' onChange={(event) => setPausable(event.target.checked)}>
                 Pausable
@@ -156,15 +156,13 @@ function LaunchInput(params: any) {
         </HStack>
         </Center>
         <Center >
-          <VStack>
         <a target="_blank" rel="noopener noreferrer" href={appUrlWithParms}>
         <Button p='1.5em' mt='1em' colorScheme={'gray'}>
           <Text  fontSize='lg' fontWeight={'bold'} >Launch Token Now</Text>
         </Button>
         </a>
-        </VStack>
       </Center>
-      </Stack>
+      </Container>
     </>
   );
 }
