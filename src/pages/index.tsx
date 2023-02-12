@@ -25,12 +25,15 @@ export default function Home(props: any) {
         <meta name="google-site-verification" content="mn1wCy3-7CBieV3wdh4msPmcH2I6W6F3TeSGVRj8x40" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {/* <SimpleGrid columns={{ base: 1, md: 1, lg: 1, xl: 2 }}>
-      <LaunchInput />
-      <About/>
-      <div></div>
-      <LatestLaunches data={props?.newData ?? []} />
-      </SimpleGrid>  */}
+      <SimpleGrid columns={{ base: 1, md: 1, lg: 1, xl: 2 }}>
+      {/* <LaunchInput />
+      <About/> */}
+      <div>blah</div>
+      <div>blah</div>
+      <div>blah</div>
+      <div>blah</div>
+      {/* <LatestLaunches data={props?.newData ?? []} /> */}
+      </SimpleGrid> 
     </>
   )
 }
