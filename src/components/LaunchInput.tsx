@@ -2,6 +2,9 @@ import { Box, Button, Center, FormControl, Input, Stack, Tooltip, VStack, HStack
 import { Text } from '@chakra-ui/react'
 import { useState } from 'react'   
 import { APP_BASE_URL, supportedChains } from '@/supportedChains'
+import {
+  IoRocketOutline
+} from 'react-icons/io5'
 
 export type Erc20LaunchDetails = {
   contractType: string
@@ -57,7 +60,7 @@ function LaunchInput(params: any) {
   for (let i = 0; i < 36; i++) selectDecimalChoices.push(`${i} decimals`)
 
   for (let i = 0; i < supportedChains.length; i++) {
-    if (supportedChains[i].id === 5) selectNetworkChoices.push(`${supportedChains[i].name} (Free)`)
+    if (supportedChains[i].id === 5) selectNetworkChoices.push(`${supportedChains[i].name} (No Wallet Required)`)
     else if (supportedChains[i].id === 137) selectNetworkChoices.push(`${supportedChains[i].name} (Cheapest)`)
     else selectNetworkChoices.push(`${supportedChains[i].name}`)
   }
@@ -68,15 +71,15 @@ function LaunchInput(params: any) {
 
   return (
     <>
-      <Container w='fit-content' pt='0.5em'>
-        <Center pt='1em' pb='1em'>
+      <Container maxW='2xl'>
+        <Center pt='2em'>
               <Text bgGradient='linear(to-l, #7928FF, #33CC80)' bgClip='text' fontWeight='bold' fontSize={'3xl'}>Create Token</Text>
         </Center>
 
-        <HStack>
+        <HStack pt='2em'>
           <Tooltip label='Example: "My Eth Token"'>
             <FormControl borderColor={"gray.700"} isInvalid={!!nameValidationError}>
-              <Input autoFocus={true} placeholder='Name'
+              <Input autoFocus={true} placeholder='Token Name'
                 autoComplete='off'
                 onChange={(event: any) => {
                   const error = nameSymbolError(event.target.value as any)
@@ -86,6 +89,7 @@ function LaunchInput(params: any) {
               />
             </FormControl>
           </Tooltip>
+          <Box w='5em'/>
           <Tooltip label='Example: "MET"'>
             <FormControl borderColor={"gray.700"} isInvalid={!!symbolValidationError}>
               <Input placeholder='Symbol'
@@ -99,7 +103,7 @@ function LaunchInput(params: any) {
             </FormControl>
           </Tooltip>
         </HStack>
-        <HStack>
+        <HStack pt='2em'>
           <Tooltip label="Total number of tokens to create. Example: 5000000">
             <FormControl isInvalid={!!supplyValidationError}>
               <NumberInput borderColor={"gray.700"}>
@@ -114,17 +118,19 @@ function LaunchInput(params: any) {
               </NumberInput>
             </FormControl>
           </Tooltip>
+          <Box w='5em'/>
           <Tooltip label='Decimal Precision. Example 4 Decimals will allow values as low as 0.0001'>
             <Select borderColor={"gray.700"} color='gray.500' defaultValue={18} variant='outline' onChange={(event: any) => {
               setDecimals(event.target.value)
             }}>
               {selectDecimalChoices.map((value, index) => (
                 <option key={index} value={index}>{value}</option>
-              ))}          </Select>
+              ))}          
+              </Select>
           </Tooltip>
         </HStack>
 
-        <Box alignSelf='start' w={'100%'}>
+        <Box alignSelf='start' w={'100%'} pt='2em'>
           <Tooltip label='Select blockchain token will be deployed on.'>
             <Select borderColor={"gray.700"} value={blockchain} variant='outline' onChange={(event: any) => {
               setBlockchain(event.target.value)
@@ -136,7 +142,13 @@ function LaunchInput(params: any) {
           </Tooltip>
         </Box>
         <Center>
-        <HStack mt='1em'>
+        <VStack mt='1em' spacing={'1em'}>
+        <HStack alignSelf={'flex-start'}>
+            <Checkbox isChecked={uniswap} borderColor='gray.500' size='md' colorScheme='blue' onChange={(event) => setUniswap(event.target.checked)}>
+              Add to Uniswap
+            </Checkbox>
+          </HStack>
+
             <HStack>
               <Checkbox isChecked={pausable} borderColor='gray.500' size='md' colorScheme='blue' onChange={(event) => setPausable(event.target.checked)}>
                 Pausable
@@ -147,18 +159,13 @@ function LaunchInput(params: any) {
                 Mintable
               </Checkbox>
             </HStack>
-
-          <HStack alignSelf={'flex-start'}>
-            <Checkbox isChecked={uniswap} borderColor='gray.500' size='md' colorScheme='blue' onChange={(event) => setUniswap(event.target.checked)}>
-              Add to Uniswap
-            </Checkbox>
-          </HStack>
-        </HStack>
+        </VStack>
         </Center>
         <Center >
         <a target="_blank" rel="noopener noreferrer" href={appUrlWithParms}>
-        <Button p='1.5em' mt='1em' colorScheme={'gray'}>
-          <Text  fontSize='lg' fontWeight={'bold'} >Launch Token Now</Text>
+        <Button p='2.0em' mt='2em' colorScheme='blue'>
+          <Text p='0.5em' fontSize='2xl' fontWeight={'bold'}>Launch Token</Text>
+          <IoRocketOutline size='25'/>
         </Button>
         </a>
       </Center>

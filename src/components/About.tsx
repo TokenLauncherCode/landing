@@ -46,11 +46,11 @@ import {
   
   export default function About() {
     return (
-        <Container pt='0.5em' w='fit-content'>
-        <Center pt='1em' pb='1em'>
+        <Container pt='2em' maxW='2xl'>
+        <Center pb='2em'>
               <Text textColor='gray.400' fontWeight='bold' fontSize={'3xl'}>Features</Text>
         </Center>
-            <SimpleGrid columns={{ base: 2, md: 2, lg: 3 }} spacingY='1em'>
+            <SimpleGrid columns={{ base: 2, md: 2, lg: 3 }} spacingY='2em'>
               {features.map((feature) => (
                 <HStack key={feature.id} align={'top'}>
                   <Box color={'green.400'}>

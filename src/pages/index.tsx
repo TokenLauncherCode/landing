@@ -1,4 +1,5 @@
 import {
+  Box,
   SimpleGrid,
 } from '@chakra-ui/react';
 
@@ -18,7 +19,7 @@ export default function Home(props: any) {
   }, [])
 
   return (
-    <SideBar>
+    <>
       <Head>
         <title>Token Launcher</title>
         <meta name="description" content="Create erc20 tokens that are traded uniswap, farming programs with any APR, and airdrop on any evm chain. Free testnet launches" />
@@ -26,13 +27,15 @@ export default function Home(props: any) {
         <meta name="google-site-verification" content="mn1wCy3-7CBieV3wdh4msPmcH2I6W6F3TeSGVRj8x40" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <SimpleGrid columns={{ base: 1, md: 1, lg: 1, xl: 2 }}>
+      <SimpleGrid columns={{ base: 1, md: 1, lg: 1, xl: 2 }}>        
       <LaunchInput />
-      <About/>
-      <div></div>
-      <LatestLaunches data={props?.newData ?? []} />
+      <Box>
+        <About/>
+        <LatestLaunches data={props?.newData ?? []} />
+      </Box>
+
       </SimpleGrid> 
-      </SideBar>
+      </>
   )
 }
 
