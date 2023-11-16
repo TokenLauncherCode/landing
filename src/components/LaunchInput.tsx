@@ -169,6 +169,14 @@ function LaunchInput(params: any) {
         </Button>
         </a>
       </Center>
+      <Center>
+      <Text color={'red.500'} fontWeight={'bold'} fontStyle={'italic'}>
+                *** Use at your own risk ***
+        </Text>
+        </Center>
+        <Text color={'grey.500'} fontWeight={'bold'} fontStyle={'italic'}>
+        Tokenlauncher.com is provided "as is" without any warranties. We are not responsible for any losses or damages incurred as a result of using our services. 
+        </Text>
       </Container>
     </>
   );
