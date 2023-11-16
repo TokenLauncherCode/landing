@@ -175,7 +175,7 @@ function LaunchInput(params: any) {
         </Text>
         </Center>
         <Text color={'grey.500'} fontWeight={'bold'} fontStyle={'italic'}>
-        Tokenlauncher.com is provided "as is" without any warranties. We are not responsible for any losses or damages incurred as a result of using our services. 
+        Tokenlauncher.com is provided `&quot;`as is`&quot;` without any warranties. We are not responsible for any losses or damages incurred as a result of using our services. 
         </Text>
       </Container>
     </>
